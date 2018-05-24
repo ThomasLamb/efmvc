@@ -1,0 +1,28 @@
+﻿@using MyFinance.Helpers;
+@using MyFinance.Domain;
+@model IEnumerable<Category>   
+<div data-role="page">  
+   <div data-role="header" data-position="fixed">
+     <h1>Category List</h1>       
+        @Html.ActionLink("Create New Category", "Create",null, new { @class = "ui-btn-right" })   
+  </div>     
+ <div data-role="content">   
+ <ul data-role="listview" data-inset="true" data-filter="true">
+  <li data-role="list-divider">Categories</li>
+ @foreach (var item in Model)
+ {    
+     <li>
+      <h3>@item.Name</h3>
+       <p>@item.Description</p>         
+        </li>
+         <li>
+  <a href="@Url.Action("Delete", new { id = item.CategoryId })" data-role="button" data-theme="b" data-icon="delete">Delete</a>
+</li>
+<li>   <a  href="@Url.Action("Edit", new { id = item.CategoryId })" data-theme="b" data-role="button" data-icon="edit">Edit</a> 
+ 
+  </li>
+ }
+@*<li data-role="list-divider" style="display:none;"></li>*@
+ </ul>
+ </div>
+ </div>

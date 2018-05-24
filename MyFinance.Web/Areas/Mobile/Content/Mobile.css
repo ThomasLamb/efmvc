@@ -1,0 +1,74 @@
+﻿body 
+{
+    background-color: #fff;
+    font-size: 0.9em;
+}
+
+.page
+{
+    width: auto;
+}
+
+h2 
+{
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+p, ul
+{
+    margin: 5px 0 10px 0;
+}
+
+#header
+{
+    background-color: #5c87b2;
+    padding: 10px;
+}
+
+#main
+{
+    padding: 10px;
+}
+
+#header h1 
+{
+    line-height: normal;
+    font-size: 1.6em !important;
+    padding-top: 0; 
+}
+
+div#title
+{
+    float: none;
+}
+
+#logindisplay
+{
+    text-align: left;
+    margin:0;
+}
+
+#menucontainer 
+{
+    margin-top: 10px;    
+}
+
+ul#menu
+{
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+ul#menu li a
+{
+    padding: 5px 15px;
+    line-height: normal;
+}
+
+span.field-validation-error 
+{
+    display: block;
+    margin-top: 5px;
+}

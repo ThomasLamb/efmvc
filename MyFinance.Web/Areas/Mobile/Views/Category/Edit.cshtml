@@ -1,0 +1,33 @@
+﻿@model MyFinance.Domain.Category
+@{
+    ViewBag.Title = "Edit Category";
+}
+<div data-role="page">  
+<div data-role="header">
+     <h1>Edit Category</h1>  
+       @Html.ActionLink("Home", "Index","Home",null, new { @class = "ui-btn-right" })   
+  </div>    
+ 
+  <div data-role="content">
+    @using (Html.BeginForm("Edit", "Category", FormMethod.Post))
+    {
+      <div data-role="fieldcontain">
+       @Html.HiddenFor(model => model.CategoryId)
+       </div>
+      <div data-role="fieldcontain">
+       @Html.LabelFor(model => model.Name)
+       @Html.EditorFor(model => model.Name)
+       </div>
+       <div>
+          @Html.ValidationMessageFor(m => m.Name)
+       </div>      
+        <div data-role="fieldcontain">
+        @Html.LabelFor(model => model.Description)
+        @Html.EditorFor(model => model.Description)          
+        </div>                
+        <div class="ui-body ui-body-b">
+        <button type="submit" data-role="button" data-theme="b">Save</button>
+      </div>
+    }       
+</div>
+</div>

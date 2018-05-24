@@ -1,0 +1,76 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using MyFinance.Data;
+using MyFinance.Data.Infrastructure;
+using MyFinance.Domain;
+using MyFinance.Helpers;
+using MyFinance.Service;
+using MyFinance.Web.Helpers;
+
+namespace MyFinance.Web.Areas.Mobile.Controllers
+{
+    public class CategoryController : Controller
+    {
+        private readonly ICategoryService categoryService;
+
+        public CategoryController(ICategoryService categoryService)
+        {
+            this.categoryService = categoryService;
+
+        }
+        public ActionResult Index()
+        {
+            var categories = categoryService.GetCategories();
+            return View(categories);
+        }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+
+            var category = categoryService.GetCategory(id);
+            return View(category);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+
+            var category = categoryService.GetCategory(id);
+            if (TryUpdateModel(category))
+            {
+                categoryService.SaveCategory();
+                return RedirectToAction("Index");
+            }
+            else return View(category);
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            var category = new Category();
+            return View(category);
+        }
+
+        [HttpPost]
+        public ActionResult Create(Category category)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(category);
+            }
+            categoryService.CreateCategory(category);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            categoryService.DeleteCategory(id);
+            var categories = categoryService.GetCategories();
+            return RedirectToAction("Index");
+        }       
+
+    }
+}
