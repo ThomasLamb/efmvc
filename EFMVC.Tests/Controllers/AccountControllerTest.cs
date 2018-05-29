@@ -117,8 +117,8 @@ namespace EFMVC.Tests.Controllers
            controller.ControllerContext = new ControllerContext(context.Object, new RouteData(), controller);
            controller.Url = new UrlHelper(new RequestContext(context.Object, new RouteData()), routes);
            var actual = controller.Login(logon, returnUrl.AbsoluteUri);
-           //Assert          
-           Assert.IsInstanceOfType(typeof(RedirectToRouteResult), actual ,"Wrong Type");
+           //Assert
+		   Assert.IsInstanceOf<RedirectToRouteResult>(actual, "Wrong Type");
            var result = (RedirectToRouteResult)actual;
            Assert.AreEqual("Home", result.RouteValues["controller"]);
            Assert.AreEqual("Index", result.RouteValues["action"]);

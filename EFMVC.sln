@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFMVC.Core", "EFMVC.Core\EFMVC.Core.csproj", "{C73D0DF7-D21B-4E15-A8AA-70540236D452}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFMVC.Model", "EFMVC.Model\EFMVC.Model.csproj", "{0CB7B2DB-AECA-421A-AA9F-BFF8B532D535}"
@@ -73,5 +75,6 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+		SolutionGuid = {3EE9D9D2-D13D-40BF-8B65-36FA6FE7703F}
 	EndGlobalSection
 EndGlobal
